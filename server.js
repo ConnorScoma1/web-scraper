@@ -25,6 +25,18 @@ mongoose.connect("mongodb://localhost/unit18Populater", {
   useNewUrlParser: true
 });
 
+/* 
+*************************************
+************* Routes ****************
+*************************************
+*/
+
+app.get("/scrape", function(req, res) {
+  axios.get("https://google.com", function(res) {
+    var $ = cheerio.load(res.data);
+  })
+})
+
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });

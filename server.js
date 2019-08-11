@@ -32,8 +32,19 @@ mongoose.connect("mongodb://localhost/unit18Populater", {
 */
 
 app.get("/scrape", function(req, res) {
-  axios.get("https://google.com", function(res) {
+  axios.get("https://www.nytimes.com/", function(response) {
     var $ = cheerio.load(res.data);
+
+    $('css-7douaa eqveam60').each(function(i, el) {
+        //Object to store scrapped info
+        var result = {}
+        //Scraping the Title
+        result.title = $(this).children('h2').text()
+
+        result.text = $(this).children('p').text()
+
+        result.link = $(this).children('a').attr('href')
+    })
   })
 })
 

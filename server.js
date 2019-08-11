@@ -57,6 +57,18 @@ app.get("/scrape", function(req, res) {
   })
 })
 
+app.get('/article', function(req, res) {
+    db.Article.find({})
+        .then(function(dbArticle) {
+            res.json(dbArticle)
+    })
+    .catch(function(err) {
+        console.log(err)
+    })
+})
+
+
+
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });

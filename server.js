@@ -64,10 +64,21 @@ app.get('/article', function(req, res) {
     })
     .catch(function(err) {
         console.log(err)
+        res.json(err)
     })
 })
 
-
+app.get('/article/:id', function(req, res) {
+    db.Article.findOne({ _id: req.params.id })
+        .populate('note')
+        .then(function(dbArticle) {
+            res.json(dbArticle)
+    })
+    .catch(function(err) {
+        console.log(err)
+        res.json(err)
+    })
+})
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);

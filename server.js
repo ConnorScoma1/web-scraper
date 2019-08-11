@@ -40,11 +40,20 @@ app.get("/scrape", function(req, res) {
         var result = {}
         //Scraping the Title
         result.title = $(this).children('h2').text()
-
+        // Scrapping P Text
         result.text = $(this).children('p').text()
-
+        // scraping link to article 
         result.link = $(this).children('a').attr('href')
+
+        db.Article.create(result)
+            .then(function(dbArticle) {
+                console.log(dbArticle)
+        })
+        .catch(function(err) {
+            console.log(err)
+        })
     })
+    res.send('Scrape Completed')
   })
 })
 

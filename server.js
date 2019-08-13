@@ -43,7 +43,7 @@ app.get("/scrape", function(req, res) {
         
         // result.text = $(this).children('p').text()
        
-        // result.link = $(this).children('a').attr('href')
+        result.link = $(this).children('a').attr('href')
 
         db.Article.create(result)
             .then(function(dbArticle) {
@@ -53,7 +53,10 @@ app.get("/scrape", function(req, res) {
             console.log(err)
         })
     })
-    res.send('Scrape Completed')
+    res.send(
+        '<h2>Scraping Complete</h2>' +
+        '<a class="scrapeComplete" href="/">Go Back</a>'
+    )
   })
 })
 

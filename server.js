@@ -59,7 +59,7 @@ app.get("/scrape", function(req, res) {
     });
     res.send(
       "<h2>Scraping Complete</h2>" +
-        '<a class="scrapeComplete" href="/" style="background-color: rgb(0, 255, 0); height: 1.5rem; width: auto; padding: 2rem">Go Back</a>'
+        '<a class="scrapeComplete" href="/" style="background-color: rgb(0, 255, 0); color: white; height: text-decoration: none; 1rem; width: auto; padding: 1.5rem">Go Back</a>'
     );
   });
 });

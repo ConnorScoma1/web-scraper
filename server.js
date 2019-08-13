@@ -58,8 +58,8 @@ app.get("/scrape", function(req, res) {
         });
     });
     res.send(
-      "<h2>Scraping Complete</h2>" +
-        '<a class="scrapeComplete" href="/" style="background-color: rgb(0, 255, 0); color: white; height: text-decoration: none; 1rem; width: auto; padding: 1.5rem">Go Back</a>'
+      "<h2 style='font-size: 2rem; font-family: arial;' >Scraping Complete!</h2>" +
+        '<a class="scrapeComplete" href="/" style="background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;">Go Back</a>'
     );
   });
 });

@@ -87,7 +87,7 @@ app.get("/article/:id", function(req, res) {
     });
 });
 
-app.post("/articles/:id", function(req, res) {
+app.post("/article/:id", function(req, res) {
   db.Note.create(req.body)
     .then(function(dbNote) {
       return db.Article.findOneAndUpdate(

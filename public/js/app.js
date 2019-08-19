@@ -1,6 +1,6 @@
 $.getJSON("/article", function(data) {
     for (var i = 0; i < data.length; i++) {
-      $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+      $("#article").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
     }
   });
   
@@ -11,7 +11,7 @@ $.getJSON("/article", function(data) {
   
     $.ajax({
       method: "GET",
-      url: "/articles/" + thisId
+      url: "/article/" + thisId
     })
       .then(function(data) {
         console.log(data);
@@ -32,7 +32,7 @@ $.getJSON("/article", function(data) {
   
     $.ajax({
       method: "POST",
-      url: "/articles/" + thisId,
+      url: "/article/" + thisId,
       data: {
         title: $("#titleinput").val(),
         body: $("#bodyinput").val()

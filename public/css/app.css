@@ -28,9 +28,8 @@
     font-size: 18px;
   }
 
-  /* When Scraping is complete (Back Button to landing page route) */
   .scrapeComplete {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -41,7 +40,7 @@
   }
 
   .scrapingButton{
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -50,3 +49,5 @@
     display: inline-block;
     font-size: 16px;
   }
+
+ 
